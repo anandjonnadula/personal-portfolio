@@ -11,9 +11,9 @@ export const profile = {
   role: "AI Engineer & Full-Stack Developer",
   roleParts: ["AI Engineer", "Full-Stack Developer"],
   tagline:
-    "I ship production-grade software — from a live university ERP to calibrated deep-learning medical-imaging systems.",
+    "I ship production-grade software — from a live ERP to calibrated deep-learning medical-imaging systems.",
   summary:
-    "Full-stack developer and AI engineer (B.Tech, Artificial Intelligence & Data Science) who ships production-grade software — from a live university ERP built on Next.js/React to calibrated deep-learning medical-imaging systems in Python/TensorFlow. Works AI-first, pairing strong engineering fundamentals with Claude and OpenAI Codex-driven development. Proven campus leader as President of the Student Activities Council.",
+    "AI engineer and Full-stack developer (B.Tech, Artificial Intelligence & Data Science) who ships production-grade software — from a live ERP built on Next.js/React to calibrated deep-learning medical-imaging systems in Python/TensorFlow. Works AI-first, pairing strong engineering fundamentals with Claude and OpenAI Codex-driven development. Proven campus leader as President of the Student Activities Council.",
   email: "anandjonn8@gmail.com",
   phone: "+91 7893409087",
   phoneSecondary: "+91 7569895886",
@@ -35,11 +35,11 @@ export const about = {
   heading: "Software that ships, models that hold up.",
   paragraphs: [
     "I'm Anand — a B.Tech graduate in Artificial Intelligence & Data Science at Vasireddy Venkatadri Institute of Technology (Class of 2026), and a developer who measures work by what actually reaches production.",
-    "That standard runs through everything I've built: a live university ERP on Next.js with twelve role-based portals behind a single JWT-secured login; a calibrated two-stage CNN for bone-fracture detection with clinical-grade features like Grad-CAM explainability and out-of-distribution gating; and a disease-prediction platform trained on real survey data I collected across an entire village.",
-    "I work AI-first — pairing strong engineering fundamentals with Claude and OpenAI Codex-driven development — and I lead beyond the codebase, serving as President of the Student Activities Council and completing four years of NSS community service.",
+    "That standard runs through everything I've built: a live ERP on Next.js with twelve role-based portals behind a single JWT-secured login; a calibrated two-stage CNN for bone-fracture detection with clinical-grade features like Grad-CAM explainability; and a disease-prediction platform trained on real survey data I collected across an entire village.",
+    "I work AI-first — pairing strong engineering fundamentals with Claude and OpenAI Codex-driven development — and I lead beyond the codebase, served as President of the Student Activities Council and completed four years of NSS community service.",
   ],
   facts: [
-    { label: "Degree", value: "B.Tech, AI & Data Science" },
+    { label: "Degree", value: "B.Tech Graduate, AI & DS" },
     { label: "Institute", value: "VVIT · Class of 2026" },
     { label: "CGPA", value: "7.52" },
     { label: "Languages", value: "English · Telugu · Hindi · German" },
@@ -300,7 +300,7 @@ export const highlights = {
   pills: [
     "98.8% fracture recall",
     "President — Student Activities Council",
-    "2 years running official college social media",
+    "Handled official college social media pages for two years",
     "Live ERP deployed on Vercel",
   ],
 } as const;
