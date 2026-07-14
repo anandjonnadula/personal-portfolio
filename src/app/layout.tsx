@@ -7,8 +7,7 @@ const sora = Sora({ subsets: ["latin"], variable: "--font-sora", display: "swap"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jbmono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jbmono", display: "swap" });
 
-// Update this to the production domain after deploying to Vercel.
-const SITE_URL = "https://anand-jonnadula.vercel.app";
+const SITE_URL = "https://anandjonnadula-portfolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
