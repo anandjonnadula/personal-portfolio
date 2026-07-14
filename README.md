@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Anand Jonnadula — 3D Portfolio
 
-## Getting Started
+A premium personal portfolio for **Anand Jonnadula** (AI Engineer & Full-Stack Developer), built with a real-time 3D neural-network hero scene, a 3D skill galaxy, a grabbable 3D portrait, scroll-driven animations, a dark/light theme toggle and fully data-driven content.
 
-First, run the development server:
+**Interactions:** click-and-hold spins the hero constellation, the skill galaxy and the portrait card (with inertia). Each word in the skill galaxy links to that technology's GitHub page. The theme toggle sits fixed in the top-right corner and persists via `localStorage`. Resume links open the PDF in a new tab so visitors can preview before downloading.
+
+**Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · React Three Fiber / Three.js · Framer Motion
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build (fully static)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All portfolio content lives in **`src/data/resume.ts`** — name, summary, skills, projects, experience, education, highlights and contact details. Every fact is sourced from `public/Anand-Jonnadula-Resume.pdf`. Edit that one file to update the site; no component changes needed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To update the downloadable resume, replace `public/Anand-Jonnadula-Resume.pdf`.
 
-## Learn More
+## Architecture
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  data/resume.ts             ← single source of truth for all content
+  app/
+    layout.tsx               ← fonts, SEO metadata, JSON-LD person schema
+    page.tsx                 ← section assembly
+    opengraph-image.tsx      ← generated social share card
+    icon.svg                 ← favicon
+  components/
+    three/
+      HeroScene.tsx          ← R3F neural constellation (theme-aware, grab-to-spin)
+      SkillOrbit.tsx         ← 3D skill galaxy (JS projection; words link to GitHub)
+      Portrait3D.tsx         ← grabbable 3D portrait card with depth layers
+    sections/                ← Hero, About, Highlights, Skills, Projects,
+                               Experience, Education, Contact
+    ui/                      ← Navbar, Footer, Loader, Reveal, TiltCard,
+                               Magnetic, NumberTicker, SectionHeading, icons
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Performance & accessibility notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **One WebGL context** — only the hero uses a canvas; the skill galaxy is a JS-projected DOM cloud. Rendering pauses when the hero scrolls out of view, and node/particle counts drop on small screens.
+- **Graceful fallback** — if WebGL is unavailable, the hero falls back to its CSS gradient/grid backdrop automatically.
+- **Reduced motion** — `prefers-reduced-motion` disables the scene animation, parallax, tilt, magnetic buttons and entrance transitions.
+- Semantic landmarks, skip link, keyboard-accessible nav, `aria` labelling on icon links; decorative visuals are `aria-hidden`.
 
-## Deploy on Vercel
+## Deploying to Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push this folder to a GitHub repository.
+2. Import the repo at [vercel.com/new](https://vercel.com/new) — the defaults work (Next.js is auto-detected).
+3. After the first deploy, set the real domain in `SITE_URL` inside `src/app/layout.tsx` so Open Graph URLs and JSON-LD resolve correctly.

@@ -1,26 +1,299 @@
 @import "tailwindcss";
 
+/*
+ * All colors are runtime tokens so the theme toggle can flip them.
+ * Dark is the default; `data-theme="light"` on <html> switches to light.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --void: #060609;
+  --panel-solid: #0c0c14;
+  --ink: #eceaf6;
+  --muted: #a2a2ba;
+  --faint: #6b6b85;
+  --accent: #8b7bff;
+  --accent-soft: #c9c2ff;
+  --glow: #4cd7f6;
+  --mint: #5eead4;
+  --edge: rgba(236, 234, 246, 0.08);
+  --panel-grad-a: rgba(255, 255, 255, 0.04);
+  --panel-grad-b: rgba(255, 255, 255, 0.012);
+  --panel-shadow: none;
+  --chip-bg: rgba(255, 255, 255, 0.03);
+  --grid-line: rgba(236, 234, 246, 0.035);
+  --noise-opacity: 0.032;
+  --grad-1: #eceaf6;
+  --grad-2: #c9c2ff;
+  --grad-3: #8b7bff;
+  --grad-4: #4cd7f6;
+  /* Accent glows: hover glares, halos and ring tints on the 3D elements. */
+  --glare-violet: rgba(139, 123, 255, 0.14);
+  --glare-cyan: rgba(76, 215, 246, 0.12);
+  --glare-mint: rgba(94, 234, 212, 0.12);
+  --halo: rgba(139, 123, 255, 0.16);
+  --halo-strong: rgba(139, 123, 255, 0.28);
+  --front-glow: rgba(139, 123, 255, 0.55);
+  --ring: rgba(139, 123, 255, 0.28);
+  --hover-border: rgba(139, 123, 255, 0.4);
+  --hover-shadow: rgba(139, 123, 255, 0.35);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --void: #f4f4f9;
+  --panel-solid: #ffffff;
+  --ink: #16161f;
+  --muted: #4b4b64;
+  --faint: #73738e;
+  --accent: #6d5cf0;
+  --accent-soft: #5443dd;
+  --glow: #0782a3;
+  --mint: #0d9488;
+  --edge: rgba(22, 22, 31, 0.1);
+  --panel-grad-a: rgba(255, 255, 255, 0.92);
+  --panel-grad-b: rgba(255, 255, 255, 0.6);
+  --panel-shadow: 0 10px 34px -22px rgba(22, 22, 31, 0.28);
+  --chip-bg: rgba(22, 22, 31, 0.035);
+  --grid-line: rgba(22, 22, 31, 0.05);
+  --noise-opacity: 0.02;
+  --grad-1: #16161f;
+  --grad-2: #5443dd;
+  --grad-3: #6d5cf0;
+  --grad-4: #0782a3;
+  /* Deeper, stronger accents so glows stay visible on light surfaces. */
+  --glare-violet: rgba(109, 92, 240, 0.26);
+  --glare-cyan: rgba(7, 130, 163, 0.2);
+  --glare-mint: rgba(13, 148, 136, 0.18);
+  --halo: rgba(109, 92, 240, 0.3);
+  --halo-strong: rgba(109, 92, 240, 0.45);
+  --front-glow: rgba(84, 67, 221, 0.4);
+  --ring: rgba(109, 92, 240, 0.5);
+  --hover-border: rgba(109, 92, 240, 0.6);
+  --hover-shadow: rgba(109, 92, 240, 0.45);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jbmono), ui-monospace, "SFMono-Regular", monospace;
+
+  --color-void: var(--void);
+  --color-panel: var(--panel-solid);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-glow: var(--glow);
+  --color-mint: var(--mint);
+  --color-edge: var(--edge);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--void);
+  color: var(--ink);
+  font-family: var(--font-body);
+  overflow-x: clip;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+::selection {
+  background: rgba(139, 123, 255, 0.35);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Slim, unobtrusive scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 123, 255, 0.35) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(139, 123, 255, 0.3);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ---------- Reusable surface & label primitives ---------- */
+
+.panel {
+  background: linear-gradient(180deg, var(--panel-grad-a), var(--panel-grad-b));
+  border: 1px solid var(--edge);
+  border-radius: 1.25rem;
+  box-shadow: var(--panel-shadow);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease,
+    background-color 0.4s ease;
+}
+
+.panel-hover:hover {
+  border-color: var(--hover-border);
+  box-shadow: 0 0 60px -18px var(--hover-shadow);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border: 1px solid var(--edge);
+  background: var(--chip-bg);
+  border-radius: 9999px;
+  padding: 0.3rem 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.chip:hover {
+  border-color: var(--hover-border);
+  color: var(--accent-soft);
+}
+
+/* Soft accent halos behind the 3D elements (theme-aware). */
+.halo {
+  background: var(--halo);
+}
+
+.halo-strong {
+  background: var(--halo-strong);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, var(--grad-1) 10%, var(--grad-2) 45%, var(--grad-3) 70%, var(--grad-4) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Decorative backgrounds ---------- */
+
+.bg-grid {
+  background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: var(--noise-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2.5rem, -1.5rem, 0) scale(1.08);
+  }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  animation: drift 16s ease-in-out infinite;
+}
+
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1.4rem);
+    opacity: 0;
+  }
+}
+
+.scroll-dot {
+  animation: scroll-dot 1.9s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Rotating dashed ring behind the 3D portrait */
+.portrait-ring {
+  border-color: var(--ring);
+  animation: ring-spin 26s linear infinite;
+}
+
+/* Skill galaxy labels tint toward the accent as they come to the front. */
+.orbit-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  will-change: transform, opacity;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.orbit-item[data-front="true"] {
+  color: var(--accent-soft);
+  text-shadow: 0 0 22px var(--front-glow);
+}
+
+.orbit-item:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .blob,
+  .scroll-dot,
+  .portrait-ring {
+    animation: none;
+  }
 }
