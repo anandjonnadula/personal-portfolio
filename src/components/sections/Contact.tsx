@@ -110,20 +110,18 @@ export default function Contact() {
               <div>
                 <p className="font-display font-semibold text-ink">Phone</p>
                 <p className="mt-1 font-mono text-xs text-faint">
-                  <a
-                    href={`tel:${profile.phone.replace(/\s/g, "")}`}
+                  <span
                     className="transition-colors hover:text-accent-soft"
                   >
                     {profile.phone}
-                  </a>
+                  </span>
                 </p>
                 <p className="mt-1.5 font-mono text-xs text-faint">
-                  <a
-                    href={`tel:${profile.phoneSecondary.replace(/\s/g, "")}`}
+                  <span
                     className="transition-colors hover:text-accent-soft"
                   >
                     {profile.phoneSecondary}
-                  </a>
+                  </span>
                 </p>
               </div>
               <span className="mt-auto text-sm text-muted">Call or message</span>
