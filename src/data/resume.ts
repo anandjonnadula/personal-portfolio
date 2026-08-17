@@ -13,7 +13,7 @@ export const profile = {
   tagline:
     "I ship production-grade software — from a live ERP to calibrated deep-learning medical-imaging systems.",
   summary:
-    "Full-stack developer and AI engineer (B.Tech Graduate, AI & DS) who ships production-grade software — from a live university ERP built on Next.js/React to calibrated deep-learning medical-imaging systems in Python/TensorFlow. Works AI-first, pairing strong engineering fundamentals with Claude and OpenAI Codex-driven development, backed by IBM Web Development Fundamentals, Google AI Professional, and AWS AI Practitioner certifications. Proven campus leader as President of the Student Activities Council.",
+    "AI engineer and full-stack developer (B.Tech, Artificial Intelligence & Data Science) who ships production-grade software — from a live ERP built on Next.js/React to calibrated deep-learning medical-imaging systems in Python/TensorFlow. Works AI-first, pairing strong engineering fundamentals with Claude and OpenAI Codex-driven development; holds IBM Web Development Fundamentals, Google AI Professional, and AWS AI Practitioner certifications. Proven campus leader as President of the Student Activities Council.",
   email: "anandjonn8@gmail.com",
   phone: "+91 7893409087",
   phoneSecondary: "+91 7569895886",
