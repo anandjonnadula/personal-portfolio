@@ -132,7 +132,7 @@ export default function Projects() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-5 py-2.5 text-sm font-medium text-accent-soft transition-all hover:border-accent/70 hover:bg-accent/20"
                           >
-                            View Live Platform
+                            View Project
                             <ArrowUpRightIcon className="h-4 w-4" />
                           </a>
                         </div>

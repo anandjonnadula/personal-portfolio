@@ -148,12 +148,13 @@ export type Certification = {
   url: string;
   period: string;
   certificate: string;
+  hue:"violet";
 };
 
 export const Certifications: Certification[] = [
-  { index: "01", label: "IBM Web Development Fundamentals", url: "https://www.credly.com/badges/57c99bcc-b6dd-49a1-b6e7-8534296a9384/public_url", period: "July 2025", certificate: "/IBM-Web-Development-Fundamentals.pdf" },
-  { index: "02", label: "Google AI Professional", url: "https://coursera.org/verify/professional-cert/677LD76HZ3H1", period: "July 2026", certificate: "/Google-AI-Professional.pdf" },
-  { index: "03", label: "AWS AI Practitioner", url: "https://www.credly.com/badges/bb4143e5-ab21-4f80-86b5-0d678ca038a5/public_url", period: "Aug 2026", certificate: "/AWS-AI-Practitioner.pdf" },
+  { index: "01", label: "IBM Web Development Fundamentals", url: "https://www.credly.com/badges/57c99bcc-b6dd-49a1-b6e7-8534296a9384/public_url", period: "July 2025", certificate: "/IBM-Web-Development-Fundamentals.pdf", hue: "violet" },
+  { index: "02", label: "Google AI Professional", url: "https://coursera.org/verify/professional-cert/677LD76HZ3H1", period: "July 2026", certificate: "/Google-AI-Professional.pdf", hue: "violet" },
+  { index: "03", label: "AWS AI Practitioner", url: "https://www.credly.com/badges/bb4143e5-ab21-4f80-86b5-0d678ca038a5/public_url", period: "Aug 2026", certificate: "/AWS-AI-Practitioner.pdf", hue: "violet" },
 ];
 
 export type Project = {
@@ -210,6 +211,7 @@ export const projects: Project[] = [
       { value: "98.8%", label: "fracture recall" },
       { value: "0.976", label: "ROC AUC" },
     ],
+    liveUrl: "https://github.com/anandjonnadula/Bone-Fracture-Detection-Using-CNN",
     hue: "cyan",
   },
   {
