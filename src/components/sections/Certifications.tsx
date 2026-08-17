@@ -23,7 +23,6 @@ export default function Certifications() {
                     <div className="flex flex-wrap items-center gap-3">
                       <h3 className="font-display text-lg font-semibold text-accent">
                         {certification.index}&nbsp;&nbsp;&nbsp;&nbsp;
-                        {certification.label}
                       </h3>
                       <h3 className="font-display text-lg font-semibold text-ink">
                         {certification.label}
