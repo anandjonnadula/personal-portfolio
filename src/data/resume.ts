@@ -143,6 +143,7 @@ export const orbitSkills: OrbitSkill[] = [
   { label: "Prompt Engineering", url: "https://github.com/dair-ai/Prompt-Engineering-Guide" },
 ];
 export type Certification = {
+  index: string;
   label: string;
   url: string;
   period: string;
@@ -150,9 +151,9 @@ export type Certification = {
 };
 
 export const Certifications: Certification[] = [
-  { label: "IBM Web Development Fundamentals", url: "https://www.credly.com/badges/57c99bcc-b6dd-49a1-b6e7-8534296a9384/public_url", period: "July 2025", certificate: "/IBM-Web-Development-Fundamentals.pdf" },
-  { label: "Google AI Professional", url: "https://coursera.org/verify/professional-cert/677LD76HZ3H1", period: "July 2026", certificate: "/Google-AI-Professional.pdf" },
-  { label: "AWS AI Practitioner", url: "https://www.credly.com/badges/bb4143e5-ab21-4f80-86b5-0d678ca038a5/public_url", period: "Aug 2026", certificate: "/AWS-AI-Practitioner.pdf" },
+  { index: "01", label: "IBM Web Development Fundamentals", url: "https://www.credly.com/badges/57c99bcc-b6dd-49a1-b6e7-8534296a9384/public_url", period: "July 2025", certificate: "/IBM-Web-Development-Fundamentals.pdf" },
+  { index: "02", label: "Google AI Professional", url: "https://coursera.org/verify/professional-cert/677LD76HZ3H1", period: "July 2026", certificate: "/Google-AI-Professional.pdf" },
+  { index: "03", label: "AWS AI Practitioner", url: "https://www.credly.com/badges/bb4143e5-ab21-4f80-86b5-0d678ca038a5/public_url", period: "Aug 2026", certificate: "/AWS-AI-Practitioner.pdf" },
 ];
 
 export type Project = {
