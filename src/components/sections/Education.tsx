@@ -47,7 +47,7 @@ export default function Education() {
               <Reveal key={entry.title} delay={0.08 + i * 0.07}>
                 <GlareCard className="flex h-full items-start justify-between gap-4 p-6 sm:p-7">
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.25em] text-faint">{entry.period}</p>
+                    <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent">{entry.period}</p>
                     <h3 className="mt-2.5 font-display text-lg font-semibold text-ink">{entry.title}</h3>
                     <p className="mt-1 text-sm text-muted">{entry.institution}</p>
                   </div>

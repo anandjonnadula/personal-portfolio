@@ -21,10 +21,10 @@ export default function Certifications() {
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <div className="flex flex-wrap items-center gap-3">
-                      <h3 className="font-display text-lg font-semibold text-accent">
+                      <h3 className="font-display text-lg font-semibold text-ink">
                         {certification.index}&nbsp;&nbsp;&nbsp;&nbsp;
                       </h3>
-                      <h3 className="font-display text-lg font-semibold text-ink">
+                      <h3 className="font-display text-lg font-semibold text-accent-soft">
                         {certification.label}
                       </h3>
 
