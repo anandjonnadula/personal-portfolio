@@ -149,7 +149,6 @@ export default function Contact() {
             View Resume (PDF)
             <ArrowUpRightIcon className="h-5 w-5" />
           </a>
-          <p className="mt-3 text-xs text-faint">Opens in a new tab — download it from the viewer if needed.</p>
         </Reveal>
       </div>
     </section>

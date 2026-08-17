@@ -132,9 +132,8 @@ export default function Portrait3D() {
         </div>
       </motion.div>
 
-      <p className="mt-5 text-center font-mono text-xs text-faint" aria-hidden="true">
-        click &amp; hold to spin
-      </p>
+      {/* Card shadow */}
+      <div className="absolute inset-0 rounded-[1.75rem] bg-black/20 backdrop-blur-md" aria-hidden="true" />
     </div>
   );
 }

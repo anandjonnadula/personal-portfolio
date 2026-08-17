@@ -119,21 +119,7 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll cue */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
-        initial={reduce ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: BASE_DELAY + 1, duration: 1 }}
-        aria-hidden="true"
-      >
-        <div className="flex flex-col items-center gap-2.5">
-          <span className="font-mono text-[0.6rem] uppercase tracking-[0.3em] text-faint">Scroll</span>
-          <div className="flex h-9 w-5 justify-center rounded-full border border-edge pt-1.5">
-            <div className="scroll-dot h-1.5 w-1.5 rounded-full bg-accent" />
-          </div>
-        </div>
-      </motion.div>
+      
     </section>
   );
 }
