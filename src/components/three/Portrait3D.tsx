@@ -131,9 +131,6 @@ export default function Portrait3D() {
           </span>
         </div>
       </motion.div>
-
-      {/* Card shadow */}
-      <div className="absolute inset-0 rounded-[1.75rem] bg-black/20 backdrop-blur-md" aria-hidden="true" />
     </div>
   );
 }
