@@ -8,7 +8,7 @@ export default function Certifications() {
     <section id="certifications" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
-          number="02"
+          number="03"
           eyebrow="Certifications"
           title="Everything has its place in the stack."
           lead="Professional certifications validating my skills across web development, AI, and cloud technologies."
@@ -29,11 +29,6 @@ export default function Certifications() {
                         {certification.period}
                       </span>
                     </div>
-
-                    <p className="mt-2 text-sm leading-relaxed text-faint">
-                      Professional certification earned and verified through
-                      the issuing organization.
-                    </p>
                   </div>
 
                   <div className="flex shrink-0 flex-wrap gap-3">
