@@ -76,6 +76,12 @@ export const skillGroups: SkillGroup[] = [
     skills: ["Claude", "OpenAI Codex", "ChatGPT", "Prompt Engineering"],
     accent: true,
   },
+  {
+    title: "AWS Tools & Cloud",
+    blurb: "Experience with AWS services and cloud infrastructure for scalable deployments.",
+    skills: ["AWS", "EC2", "S3", "Lambda", "CloudTrail", "CloudWatch", "IAM", "SageMaker", "Bedrock", "Comprehend", "Textract", "Rekognition", "Polly", "Lex", "Kendra", "OpenSearch", "Q", "Transcribe", "Translate", "Personalize", "A2I", "Macie", "Config", "Inspector", "Audit Manager", "Artifact", "Trusted Advisor" ],
+    accent: true,
+  },
 ];
 
 /**
@@ -110,6 +116,28 @@ export const techLinks: Record<string, string> = {
   "OpenAI Codex": "https://github.com/openai/codex",
   ChatGPT: "https://github.com/openai/openai-cookbook",
   "Prompt Engineering": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+  "AWS": "https://docs.aws.amazon.com/",
+    "EC2": "https://docs.aws.amazon.com/ec2/",
+    "S3": " https://docs.aws.amazon.com/s3/",
+    "Lambda": "https://docs.aws.amazon.com/lambda/",
+    "CloudTrail": "https://docs.aws.amazon.com/cloudtrail/",
+    "CloudWatch": "https://docs.aws.amazon.com/cloudwatch/",
+    "IAM": "https://docs.aws.amazon.com/iam/",
+    "SageMaker": "https://docs.aws.amazon.com/sagemaker/",
+    "Bedrock": "https://docs.aws.amazon.com/bedrock/",
+    "Comprehend": "https://docs.aws.amazon.com/comprehend/",
+    "Textract": "https://docs.aws.amazon.com/textract/",
+    "Rekognition": "https://docs.aws.amazon.com/rekognition/",
+    "Polly": "https://docs.aws.amazon.com/polly/",
+    "Kendra": "https://docs.aws.amazon.com/kendra/",
+    "OpenSearch": "https://docs.aws.amazon.com/opensearch/",
+    "Q": "https://docs.aws.amazon.com/q/",
+    "Transcribe": "https://docs.aws.amazon.com/transcribe/",
+    "Translate": "https://docs.aws.amazon.com/translate/",
+    "Personalize": "https://docs.aws.amazon.com/personalize/",
+    "A2I": "https://docs.aws.amazon.com/a2i/",
+    "Macie": "https://docs.aws.amazon.com/macie/",
+    "Config": "https://docs.aws.amazon.com/config/",
 };
 
 export type OrbitSkill = {

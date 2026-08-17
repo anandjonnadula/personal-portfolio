@@ -20,7 +20,7 @@ export default function Skills() {
           <Reveal className="order-2 lg:order-1">
             <SkillOrbit skills={[...orbitSkills]} />
             <p className="mt-4 text-center font-mono text-xs text-faint">
-              click &amp; hold to spin · click a word to open its GitHub
+              click &amp; hold to spin · click a word to know more
             </p>
           </Reveal>
 
