@@ -21,7 +21,7 @@ export default function Projects() {
     <section id="projects" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
-          number="03"
+          number="04"
           eyebrow="Projects"
           title="Case studies in shipping."
           lead="Three production-grade builds — a live ERP platform, a clinical-grade imaging system and a community health tool built on data collected in the field."

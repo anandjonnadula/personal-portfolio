@@ -22,7 +22,7 @@ export default function Experience() {
     <section id="experience" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
-          number="04"
+          number="05"
           eyebrow="Experience"
           title="Leadership beyond the codebase."
           lead="Elected roles and long-term service — coordinating people, events and initiatives at campus scale."

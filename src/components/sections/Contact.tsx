@@ -36,7 +36,7 @@ export default function Contact() {
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
-          number="06"
+          number="07"
           eyebrow="Contact"
           title="Let's build something that ships."
           lead="Open to conversations with recruiters, teams and collaborators — the fastest way to reach me is email."

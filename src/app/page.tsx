@@ -6,6 +6,7 @@ import Hero from "@/components/sections/Hero";
 import Highlights from "@/components/sections/Highlights";
 import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
+import Certifications from "@/components/sections/Certifications";
 import Footer from "@/components/ui/Footer";
 import Loader from "@/components/ui/Loader";
 import Navbar from "@/components/ui/Navbar";
@@ -28,6 +29,7 @@ export default function Home() {
         <About />
         <Highlights />
         <Skills />
+        <Certifications />
         <Projects />
         <Experience />
         <Education />

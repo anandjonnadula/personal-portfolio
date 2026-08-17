@@ -8,7 +8,7 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {profile.name}
         </p>
-        <p className="font-mono text-xs">Designed &amp; built with Next.js · React Three Fiber · Tailwind CSS</p>
+        <p className="font-mono text-xs">Designed &amp; built by {profile.name}</p>
         <div className="flex items-center gap-4">
           <a
             href={profile.github}

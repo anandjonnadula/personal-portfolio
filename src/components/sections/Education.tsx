@@ -10,7 +10,7 @@ export default function Education() {
   return (
     <section id="education" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeading number="05" eyebrow="Education" title="Grounded in AI & Data Science." />
+        <SectionHeading number="06" eyebrow="Education" title="Grounded in AI & Data Science." />
 
         <div className="mt-12 space-y-5">
           {featured.map((entry) => (
